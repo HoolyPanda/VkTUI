@@ -13,7 +13,7 @@ class DialogsBox(npyscreen.BoxTitle):
         self.values = values
         if chatBox:
             self.chatBox = chatBox
-        self.display()
+        # self.display()
 
     def setChatBox(self, chatBox: ChatBox.ChatBox):
         self.chatBox = chatBox
