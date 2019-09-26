@@ -9,12 +9,13 @@ class VkTUI(npyscreen.NPSAppManaged):
     def main(self):
         npyscreen.setTheme(npyscreen.Themes.ColorfulTheme)
         LoginForm = self.addForm("LoginScreen", LoginScreen.LoginScreen)
-        MainForm = self.addForm("MainScreen", MainScreen.MainScreen, colums= 2, rows= 1)
+        MainForm = self.addForm("MainScreen", MainScreen.MainScreen,)
         MainForm.SetScreenValue(LoginForm.value)
         authResult = MainForm.Auth()
         if authResult:
             alert = self.addForm("Alert", AlertPopup.AlertPopup)
             alert.DisplayText(authResult)
+            alert.edit()
         else:
             MainForm.display()
             MainForm.edit()
