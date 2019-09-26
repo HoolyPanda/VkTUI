@@ -11,16 +11,15 @@ class VkTUI(npyscreen.NPSAppManaged):
         LoginForm = self.addForm("LoginScreen", LoginScreen.LoginScreen)
         MainForm = self.addForm("MainScreen", MainScreen.MainScreen,)
         MainForm.SetScreenValue(LoginForm.value)
-        authResult = MainForm.Auth()
+        # authResult = MainForm.Auth()
+        authResult = None
         if authResult:
             alert = self.addForm("Alert", AlertPopup.AlertPopup)
             alert.DisplayText(authResult)
-            alert.edit()
         else:
             MainForm.display()
             MainForm.edit()
         pass
-
 
 if __name__ == "__main__":
     App = VkTUI()

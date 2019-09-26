@@ -1,6 +1,7 @@
 import npyscreen
 import ChatBox
 
+
 class DialogsBox(npyscreen.BoxTitle):
    
     def when_value_edited(self):
@@ -9,11 +10,8 @@ class DialogsBox(npyscreen.BoxTitle):
             self.chatBox.display()
         self.display()
 
-    def _setValues(self, values, chatBox = None):
+    def _setValues(self, values):
         self.values = values
-        if chatBox:
-            self.chatBox = chatBox
-        # self.display()
 
     def setChatBox(self, chatBox: ChatBox.ChatBox):
         self.chatBox = chatBox

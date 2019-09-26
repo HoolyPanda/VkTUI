@@ -1,17 +1,13 @@
 import npyscreen
 
 class AlertPopup(npyscreen.Popup):
+
     def create(self):
-        # self.messageBox = self.add(npyscreen.TitleFixedText, relx= int(self.max_x / 5), rely= int(self.max_y/2),)
-        self.messageBox = self.add(npyscreen.MultiLineEdit, value= "", relx= int(self.max_x / 5), rely= int(self.max_y/2), editable= False)
-        # self.height = 20
-        # self.message = "----"
-        # b = self.add(npyscreen.Button, max_width= self.max_x, height= self.max_y)
+        self.messageBox = self.add(npyscreen.MultiLineEdit, relx= int(self.max_x / 5), rely= int(self.max_y/2), editable= False)
         self.display()
 
     def DisplayText(self, text):
         self.messageBox.value = text
         self.messageBox.display()
-        # self.set_value(text)
-        # self.display()
+        self.edit()
         pass
