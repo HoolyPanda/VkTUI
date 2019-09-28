@@ -1,0 +1,9 @@
+{
+    "nick": "MazaHacka",
+    "password":"",
+    "gameClass": "Medic",
+    "armorLevel": 1,
+    "toolsLevel": 1,
+    "characterLevel":1,
+    "weaponType": "shotgun"
+}

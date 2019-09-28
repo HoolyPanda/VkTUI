@@ -1,5 +1,5 @@
 import npyscreen
-import ChatBox
+from assets.View import ChatBox
 
 
 class DialogsBox(npyscreen.BoxTitle):
@@ -10,10 +10,17 @@ class DialogsBox(npyscreen.BoxTitle):
             self.chatBox.display()
         self.display()
 
-    def _setValues(self, values):
+    def _setValues(self, values: []):
         self.values = values
+        self.display()
 
-    def setChatBox(self, chatBox: ChatBox.ChatBox):
+    def _setValues(self, values: {}):
+        for questName in values.keys():
+            self.values.append(questName)
+        self.display()
+        pass
+
+    def bindChatBox(self, chatBox: ChatBox.ChatBox):
         self.chatBox = chatBox
 
     def create(self):
