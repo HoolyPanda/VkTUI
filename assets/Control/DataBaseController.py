@@ -1,4 +1,6 @@
 from assets.Model.EventLoader import QuestLoader
+from assets.View.ChatBox import ChatBox
+
 
 class DataBaseController():
     def __init__(self):
@@ -11,3 +13,7 @@ class DataBaseController():
 
     def LoadQuestsToWiget(self, wiget):
         self.questLoader.LoadQuestList(targetWiget= wiget)
+
+    def displayQuestDiscription(self, questDiscriptionFile: str, wiget: ChatBox):
+        self.questLoader.LoadQuestData(filePath= questDiscriptionFile, targetWiget= wiget)
+        pass

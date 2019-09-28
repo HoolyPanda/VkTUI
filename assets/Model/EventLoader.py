@@ -1,5 +1,7 @@
 import os
-from assets.View.DialogsBox import DialogsBox
+# from assets.View.DialogsBox import DialogsBox
+import assets.View.DialogsBox as DialogsBox
+from assets.View.ChatBox import ChatBox
 from assets.Model import Quest
 import assets.Model.Medic as Medic
 import json
@@ -24,11 +26,14 @@ class QuestLoader():
         for quest in self.quests:
             if quest.discriptionFile:
                 targetWiget._appendValue(quest.discriptionFile)
-                # questDiscription = open(quest.discriptionFile + ".txt", 'r').read()
-
-            # questDiscription = open(quest.)
             pass
-            
+
+    def LoadQuestData(self, filePath: str, targetWiget: ChatBox):
+        questDiscription = open(filePath, 'r').readlines()
+        data = []
+        # questDiscriptions:
+        if questDiscription:
+            targetWiget.values = questDiscription
 
     def LoadCharacter(self, nick= None, password= None):
         for character in os.listdir("Runners"):
