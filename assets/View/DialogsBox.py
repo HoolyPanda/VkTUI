@@ -20,6 +20,9 @@ class DialogsBox(npyscreen.BoxTitle):
         self.display()
         pass
 
+    def _appendValue(self, value: str):
+        self.values.append(value)
+
     def bindChatBox(self, chatBox: ChatBox.ChatBox):
         self.chatBox = chatBox
 

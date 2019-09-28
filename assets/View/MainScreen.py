@@ -17,4 +17,3 @@ class MainScreen(npyscreen.Form):
         self.dialogsBox.bindChatBox(self.chatBox)
         dataBaseController.LoadQuestsToWiget(self.dialogsBox)
         pass
-

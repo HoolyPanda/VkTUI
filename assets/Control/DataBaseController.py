@@ -10,4 +10,4 @@ class DataBaseController():
         return self.questLoader.LoadCharacter(nick = _nick, password = _password)
 
     def LoadQuestsToWiget(self, wiget):
-        self.questLoader.LoadEventsToWiget(targetWiget= wiget)
+        self.questLoader.LoadQuestList(targetWiget= wiget)

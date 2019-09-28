@@ -11,18 +11,24 @@ class QuestLoader():
         pass
 
     def LoadEvents(self):
-        
+        a =os.listdir("DataBase") 
         for questName in os.listdir("DataBase"):
             if os.path.exists("DataBase/" + questName.replace('.txt', '') + ".json"):
                 newQuest = self.LoadEventFromJson(filePath= "DataBase/" + questName.replace('.txt', '') + ".json")
                 self.quests.append(newQuest)
             else:
                 newQuest = Quest.Quest(discriptionFile= questName.replace('.txt', ''))
-
             pass
 
-    def LoadEventsToWiget(self, targetWiget: DialogsBox):
-        targetWiget._setValues(self.quests)
+    def LoadQuestList(self, targetWiget: DialogsBox):
+        for quest in self.quests:
+            if quest.discriptionFile:
+                targetWiget._appendValue(quest.discriptionFile)
+                # questDiscription = open(quest.discriptionFile + ".txt", 'r').read()
+
+            # questDiscription = open(quest.)
+            pass
+            
 
     def LoadCharacter(self, nick= None, password= None):
         for character in os.listdir("Runners"):

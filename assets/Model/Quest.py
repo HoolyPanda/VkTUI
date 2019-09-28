@@ -4,7 +4,7 @@ from assets.Model import Medic
 
 class Quest():
     def __init__(self, discriptionFile = None):
-        self.discriptionFile = None
+        self.discriptionFile = discriptionFile
         self.runners = []
 
     
