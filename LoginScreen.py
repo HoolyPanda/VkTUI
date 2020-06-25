@@ -14,5 +14,6 @@ class LoginScreen(npyscreen.Form):
 
     def confirmButtonPress(self):
         self.set_value({"login":self.loginInput.value, "password":self.passLabel.value})
+        self.set_value({"login":open('./l.cfg', 'r').readline(), "password":open('./p.cfg', 'r').readline()})
         self.exit_editing()
     

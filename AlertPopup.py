@@ -10,8 +10,6 @@ class AlertPopup(npyscreen.Popup):
         self.display()
 
     def DisplayText(self, text):
-        self.messageBox.value = text
-        self.messageBox.display()
-        # self.set_value(text)
-        # self.display()
+        self.messageBox = self.add(npyscreen.MultiLineEdit, value= text, relx= int(self.max_x / 5), rely= int(self.max_y/2), editable= False, max_length= len(text))
+        self.display()
         pass

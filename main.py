@@ -1,4 +1,6 @@
 import npyscreen
+# import npy
+# npyscreen
 import LoginScreen
 import MainScreen
 import AlertPopup
@@ -7,18 +9,20 @@ import AlertPopup
 class VkTUI(npyscreen.NPSAppManaged):
 
     def main(self):
+        
         npyscreen.setTheme(npyscreen.Themes.ColorfulTheme)
-        LoginForm = self.addForm("LoginScreen", LoginScreen.LoginScreen)
-        MainForm = self.addForm("MainScreen", MainScreen.MainScreen,)
-        MainForm.SetScreenValue(LoginForm.value)
-        authResult = MainForm.Auth()
+        self.LoginForm = self.addForm("LoginScreen", LoginScreen.LoginScreen)
+        self.MainForm = self.addForm("MainScreen", MainScreen.MainScreen)
+        self.MainForm.SetScreenValue(self.LoginForm.value)
+        self.MainForm.name = 'MAiN'
+        authResult = self.MainForm.Auth()
         if authResult:
             alert = self.addForm("Alert", AlertPopup.AlertPopup)
             alert.DisplayText(authResult)
             alert.edit()
         else:
-            MainForm.display()
-            MainForm.edit()
+            self.MainForm.display()
+            self.MainForm.edit()
         pass
 
 
